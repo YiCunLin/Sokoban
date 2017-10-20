@@ -3,7 +3,7 @@
 let http = require('http');
 
 http.createServer((request, reponse)) => {
-  // 取得 node.js 的 fs 模組
+
   let fs = require('fs')
 
   fs.readFile('../htdocs/index.html', (err, data) => {
@@ -17,5 +17,5 @@ http.createServer((request, reponse)) => {
 
 }).listen(8088);
 
-// log message to Console
+
 console.log(' 伺服器啓動，連線 url: http://127.0.0.1:8088/');
