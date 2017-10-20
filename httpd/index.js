@@ -3,17 +3,18 @@
 let http = require('http');
 
 http.createServer((request, reponse)) => {
-  //傳送 HTTP header
-  // HTTP Status: 200 : OK
-  // Content Type: text/plain
-  response.writeHead(200, {
-    'Content-Type': 'text/plain'
-  });
+  // 取得 node.js 的 fs 模組
+  let fs = require('fs')
 
-  // 傳送回應內容。
-  response.end('Hello World!\n');
+  fs.readFile('../htdocs/index.html', (err, data) => {
+    response.writeHead(200, {
+      'Content-Type': 'text/html'
+    });
 
-  console.log('request.headers: \n', request.headers)
+    response.write(data);
+
+    response.end();
+
 }).listen(8088);
 
 // log message to Console
