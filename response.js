@@ -9,12 +9,12 @@ exports.ctor = (response) => {
   };
 
   return {
-    error: () => {
+  error: () => {
       res(404, 'text/plain', 'Page Not Found\n')
-      }, // error
+    }, // error
 
-      serve: (type, data) => {
-        res(200, type, data);
-      } // serve
-    };
+    serve: (type, data) => {
+      res(200, type, data);
+    } // serve
+  };
 };
