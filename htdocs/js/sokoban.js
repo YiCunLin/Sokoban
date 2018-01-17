@@ -410,8 +410,7 @@ let prototypeGameState = {
 
   putBoxOnGoal: function ({x, y}) {
     this.level[y] = replaceAt(this.level[y], x, SOKOBAN.BOX_ON_GOAL);
-    if (this.level[SOKOBAN.GOAL] == this.level[SOKOBAN.BOX_ON_GOAL])
-    alert('123');
+
     return this;
   },
 
@@ -437,6 +436,20 @@ let prototypeGameState = {
     this.level[y] = replaceAt(this.level[y], x, SOKOBAN.MAN_ON_GOAL);
 
     return this;
+  },
+
+  EndGame: function(){
+    var finished = true, i, j;
+    for (i = 0; i < this.level.length; i++){
+      for (j = 0; j < this.level[i].length; j++){
+        if (this.level[i][j] == SOKOBAN.GOAL || this.level[i][j] == SOKOBAN.BOX){
+          finished = false;
+        }
+      }
+    }
+    if(finished){
+      alert ("Congratulation Clearance！恭喜通關！");
+    }
   }
 };
 
@@ -565,6 +578,7 @@ let sokoban = {
   update: function (e) {
     this.move(e);
     this.paint();
+    this.EndGame();
   },
 };
 
