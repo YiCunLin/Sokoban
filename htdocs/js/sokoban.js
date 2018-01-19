@@ -102,6 +102,21 @@ let levels = [
      "----------#-",
      "------------"
    ],
+
+   [
+     "------------",
+     "------------",
+     "------------",
+     "------------",
+     "------------",
+     "------------",
+     "------------",
+     "------------",
+     "#@#########-",
+     "#--------$.#",
+     "############",
+     "------------"
+   ],
 ];
 
 /**
@@ -619,7 +634,7 @@ let sokoban = {
  * @returns HTML 'section' 物件，含有關卡選擇按鈕
  */
 let controlPane = (sokoban) => {
-  let choices = [ 'EASY', 'NORMAL', 'HARD' , 'SPECIAL' ];
+  let choices = [ 'EASY', 'NORMAL', 'HARD' , 'SPECIAL' , 'wtf'];
 
   let section = document.createElement('section');
   section.style.gridArea = '5 / 2 / 6 / 5';
