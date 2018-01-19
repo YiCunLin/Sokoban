@@ -112,9 +112,9 @@ let levels = [
      "------------",
      "------------",
      "------------",
-     "#@#########-",
-     "#        $.#",
-     "############",
+     "#-##########",
+     "#@#####.####",
+     "#-##########",
      "------------"
    ],
 ];
@@ -495,6 +495,20 @@ let prototypeGameState = {
     if(finished){
       alert ("Congratulation Clearance！恭喜通關！");
     }
+  },
+
+  Funny: function(){
+    var clean = true, i, j;
+    for (i = 0; i < this.level.length; i++){
+      for (j = 0; j < this.level[i].length; j++){
+        if (this.level[i][j] == SOKOBAN.GROUND){
+          finished = false;
+        }
+      }
+    }
+    if(clean){
+      alert ("VERY CLEAN!");
+    }
   }
 };
 
@@ -624,6 +638,7 @@ let sokoban = {
     this.move(e);
     this.paint();
     this.EndGame();
+    this.Funny();
   },
 };
 
@@ -634,7 +649,7 @@ let sokoban = {
  * @returns HTML 'section' 物件，含有關卡選擇按鈕
  */
 let controlPane = (sokoban) => {
-  let choices = [ 'EASY', 'NORMAL', 'HARD' , 'SPECIAL' , 'wtf'];
+  let choices = [ 'EASY', 'NORMAL', 'HARD' , 'SPECIAL' , '另類玩法'];
 
   let section = document.createElement('section');
   section.style.gridArea = '5 / 2 / 6 / 5';
