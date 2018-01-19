@@ -72,6 +72,36 @@ let levels = [
      "------------",
      "------------"
    ],
+
+   [
+     "------------",
+     "------------",
+     "-#########--",
+     "-#    $ .#--",
+     "-#  # $  #--",
+     "-#  # #  #--",
+     "-#  $@ # #--",
+     "-#  $   .#--",
+     "-#..######--",
+     "-####-------",
+     "------------",
+     "------------"
+   ],
+
+   [
+     "------------",
+     "-##########-",
+     "--#@      #-",
+     "---#  $ $$#-",
+     "---##     #-",
+     "-----# $$$#-",
+     "------#...#-",
+     "-------#..#-",
+     "--------#.#-",
+     "---------##-",
+     "----------#-",
+     "------------"
+   ],
 ];
 
 /**
@@ -589,7 +619,7 @@ let sokoban = {
  * @returns HTML 'section' 物件，含有關卡選擇按鈕
  */
 let controlPane = (sokoban) => {
-  let choices = [ '第一關', '第二關', '第三關' ];
+  let choices = [ 'EASY', 'NORMAL', 'HARD' , 'SPECIAL' ];
 
   let section = document.createElement('section');
   section.style.gridArea = '5 / 2 / 6 / 5';
@@ -597,7 +627,7 @@ let controlPane = (sokoban) => {
   choices.forEach((text, level) => {
     let btn = document.createElement('button');
 
-    btn.style.backgroundColor = '#007fff5f';
+    btn.style.backgroundColor = '#EEEED1';
     btn.style.color = '#051268cf';
     btn.style.fontSize = '2rem';
 
